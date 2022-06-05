@@ -52,20 +52,26 @@ pyplot.ylim(-15, 15)
 pyplot.show()
 
 print("Una vez vista la grafica, ingrese la ecuacion -0.5x^2+2.5x+4.5\n")
+
 ecuacion = a, b, c = [float(input(f'Ingresa el coeficiente {coef}: ')) for coef in ('a', 'b', 'c')]
 while a != 0.5 and b != 2.5 and c != 4.5:
     print("No ingreso los coeficientes indicados en la ecuacion -0.5x^2+2.5x+4.5 \n")
     ecuacion = a, b, c = [float(input(f'Ingresa el coeficiente {coef}: ')) for coef in ('a', 'b', 'c')]
+
 primer_punto = float(input("ingrese el primer punto en la grafica: "))
 segundo_punto = float(input("ingrese el segundo punto en la grafica: "))
 iteracion = int(input("Ingrese las iteraciones deseadas: "))
+
 while iteracion <= 0:
     print("Las iteraciones ingresadas deben ser mayores a 0\n")
     iteracion = int(input("Ingrese las iteraciones deseadas: "))
+
 error = int(input("Ingrese el porcentaje de error deseado: "))
+
 while error <= 0:
     print("El error deseado no puede ser negativo")
     error = int(input("Ingrese el porcentaje de error deseado: "))
+
 print("\nRegula-Falsi:\n")
 
 regula_falsi(lambda x: -a * (x ** 2) - b * x + c, primer_punto, segundo_punto, iteracion, error)
